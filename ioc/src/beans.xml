@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!--beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">-->
+        
+        <beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+         xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+        <context:annotation-config/>
+       
+      
+        <!--<bean name="connection" class="com.ust.ioc.DBConnection"> 
+			<property name="url" value="jdbc:mysql://localhost:3306/sakila?useSSL=false"></property>
+			<property name="dbUserName" value="root"></property>
+			<property name="dbPassword" value="pass@word1"></property>-->
+			
+		<!--</bean>
+         <bean name="login" class="com.ust.ioc.Login">
+         <property name="db" ref="connection"></property>
+         </bean>
+         <bean name="point1" class="com.ust.ioc2.Point">
+			 <property name="x"  value="1"></property>
+			 <property name="y" value="2"></property>
+			 </bean>
+		<bean name="point2" class="com.ust.ioc2.Point">
+			<property name="x" value="3"></property>
+			<property name="y" value="4"></property> 
+		 </bean>
+		 <bean name="line" class="com.ust.ioc2.Line" scope="prototype">
+			 
+			 <property name="p1" ref="point1"></property>
+			 <property name="p2" ref="point2"></property>
+		 </bean>
+        -->
+        <!--<bean name="p1" class="com.ust.ioc2.Point">
+			<constructor-arg name="x" value="10"></constructor-arg>
+			<constructor-arg name="y" value="18"></constructor-arg>
+		</bean>
+		<bean name="p2" class="com.ust.ioc2.Point">
+			<constructor-arg name="x" value="70"></constructor-arg>
+			<constructor-arg name="y" value="88"></constructor-arg>
+		</bean>
+		<bean name="line" class="com.ust.ioc2.Line" autowire="byName"  init-method="init" destroy-method="destroy">
+			</bean>
+        
+       <bean name="line" class="com.ust.ioc2.Line" init-method="init" destroy-method="destroy">
+		   <constructor-arg name="p1" ref="p1"></constructor-arg>
+			<constructor-arg name="p2" ref="p2"></constructor-arg>
+		<</bean>
+		-->
+		
+		<bean name="a" class="com.ust.iocautowiring.A"></bean>
+		<!----><bean name="a2" class="com.ust.iocautowiring.A"></bean><!---->
+		<bean name="b" class="com.ust.iocautowiring.B" autowire="constructor">	
+		</bean>
+		</beans>
+		
+		
+		

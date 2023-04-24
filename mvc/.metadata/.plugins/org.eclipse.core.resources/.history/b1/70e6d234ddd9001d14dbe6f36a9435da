@@ -1,0 +1,13 @@
+package com.ust.rest.repository;
+
+import java.util.ArrayList;
+
+import com.ust.rest.resource.Product;
+
+public class ProductRepository {  //collections act as a local cache .
+       private ArrayList<Product> productCache=new ArrayList<>();
+       public boolean addProduct(Product product) {
+    	   return productCache.add(product);
+       }
+       
+}

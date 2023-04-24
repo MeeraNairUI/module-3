@@ -1,0 +1,11 @@
+package com.ust.rest.services;
+
+import com.ust.rest.repository.ProductRepository;
+import com.ust.rest.resource.Product;
+
+public class ProductService {
+     ProductRepository repository;
+     public Product getProduct(int productId) {
+    	return  repository.getProduct(productId);
+     }
+}

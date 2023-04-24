@@ -1,0 +1,22 @@
+package com.ust.rest;
+
+import org.springframework.context.annotation.Configuration;
+
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@Configuration
+@EnableSwagger2
+public class Swaggerconfig {
+      private ApiInfo metaData() {
+    	  return new ApiInfoBuilder().title("UST - SpringBoot Swagger Config").
+    	      description("\" Swagger configuration for application\"").
+    	      version("1.1.0").
+    	      license("Apache 2.0").
+    	      licenseUrl("https://www.apache.org/license/LICENSE-2.0\"").
+    	      contact(new Contact("UST","https://youtube.com/","contact@ust.com")).
+    	      build();
+      }
+}

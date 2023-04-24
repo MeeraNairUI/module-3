@@ -1,0 +1,15 @@
+package com.ust.rest.resources;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ust.rest.resource.Product;
+
+@RestController
+@RequestMapping("/product/api.1.0")
+public class ProductResource {
+        @GetMapping
+        @RequestMapping("/retrieve/{productId}")
+        public Product fetchProduct(@PathVariable)
+}

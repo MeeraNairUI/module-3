@@ -1,0 +1,69 @@
+package com.ust.rest.repository;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import com.ust.rest.resource.Product;
+
+public class ProductRepository {  //collections act as a local cache .
+       private ArrayList<Product> productCache=new ArrayList<>();
+       
+       public ProductRepository() {
+    	   Product p1=new Product();
+    	   p1.setProductId(101);
+    	   p1.setDescription("Macbook Retina Eye");
+    	   p1.setPrice(new BigDecimal(180000));
+    	   p1.setQty(5);
+    	   productCache.add(p1);
+    	   
+    	   Product p2=new Product();
+    	   p2.setProductId(101);
+    	   p2.setName("Tablet");
+    	   p2.setDescription("Samsung Max View");
+    	   p2.setPrice(new BigDecimal(35000));
+    	   p2.setQty(10);
+    	   productCache.add(p2);
+
+    	   
+    	   Product p3=new Product();
+    	   p3.setProductId(103);
+    	   p3.setName("Mobile");
+    	   p3.setDescription("iphone 14");
+    	   p3.setPrice(new BigDecimal(75000));
+    	   p3.setQty(7);
+    	   productCache.add(p3);
+    	   
+    	   Product p4=new Product();
+    	   p4.setProductId(104);
+    	   p4.setName("Television");
+    	   p4.setDescription("Sony Bravo 75\"");
+    	   p4.setPrice(new BigDecimal(75000));
+    	   p4.setQty(7);
+    	   productCache.add(p4);
+    	   
+    	   Product p5=new Product();
+    	   p5.setProductId(105);
+    	   p5.setName("Air Conditioner");
+    	   p5.setDescription("Samsung Xcool");
+    	   p5.setPrice(new BigDecimal(44500));
+    	   p5.setQty(15);
+    	   productCache.add(p5);
+       }//C-Create
+       public boolean addProduct(Product product) {
+    	   return productCache.add(product);
+       }
+       //R-Retrieve
+       public Product getProduct(long productId) {
+    	   Iterator<Product> iter=productCache.iterator();
+    	   Product product=null;
+    	   while(iter.hasNext()) {
+    		   Product temp=iter.next();
+    		   if(product.getProductId()==productId)
+    			   return product;
+    		   else
+    			   return null; 
+    	   }
+       }
+       
+}

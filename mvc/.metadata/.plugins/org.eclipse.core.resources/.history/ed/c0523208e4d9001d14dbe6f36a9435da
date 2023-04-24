@@ -1,0 +1,14 @@
+package com.ust.rest.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.ust.rest.repository.ProductRepository;
+import com.ust.rest.resource.Product;
+
+public class ProductService {
+	@Autowired
+     ProductRepository repository;
+     public Product getProduct(long productId) {
+    	return  repository.getProduct(productId);
+     }
+}

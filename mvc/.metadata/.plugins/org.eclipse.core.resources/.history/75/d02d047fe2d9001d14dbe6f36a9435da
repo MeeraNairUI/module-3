@@ -1,0 +1,20 @@
+package com.ust.rest.resources;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ust.rest.resource.Product;
+import com.ust.rest.services.ProductService;
+
+@RestController
+@RequestMapping("/product/api.1.0")
+public class ProductResource {
+	ProductService service;
+        @GetMapping
+        @RequestMapping("/retrieve/{productId}")
+        public Product fetchProduct(@PathVariable long productId) {
+        	return service.getProduct(productId);
+        }
+}
